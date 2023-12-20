@@ -18,6 +18,7 @@ import { ReactComponent as InfoCircle } from "../../assets/icons/info.svg"
 import { ReactComponent as KeyIcon } from "../../assets/icons/key.svg"
 import { ReactComponent as LogoDark } from "../../assets/icons/logo_black.svg"
 import { ReactComponent as LogoBlue } from "../../assets/icons/logo_blue.svg"
+import { ReactComponent as LogoDetailed } from "../../assets/icons/logo_detailed.svg"
 import { ReactComponent as LogoutIcon } from "../../assets/icons/logout.svg"
 import { ReactComponent as ManageAccountsIcon } from "../../assets/icons/manage_accounts.svg"
 import { ReactComponent as MoreIcon } from "../../assets/icons/more.svg"
@@ -52,6 +53,7 @@ export {
   KeyIcon,
   LogoDark,
   LogoBlue,
+  LogoDetailed,
   LogoutIcon,
   ManageAccountsIcon,
   MoreIcon,

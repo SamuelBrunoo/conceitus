@@ -1,6 +1,5 @@
 import * as S from "./styles"
-import { LogoBlue, InfoCircle, Arrow, Search } from "../../../utils/imports/icons"
-import { useState } from "react"
+import { LogoBlue, Arrow, Search } from "../../../utils/imports/icons"
 
 const falseData = [
   {
@@ -28,11 +27,16 @@ const falseData = [
 
 type Props = {
   changeDisplay: () => void
+  handleSignIn: (data?: any) => Promise<void | boolean>
 }
 
-const CompanySelectPage = ({ changeDisplay }: Props) => {
+const CompanySelectPage = ({ changeDisplay, handleSignIn }: Props) => {
   const handleOut = () => {
     changeDisplay()
+  }
+
+  const handleSubmit = (company: any) => {
+    handleSignIn(company)
   }
 
   return (
@@ -61,13 +65,13 @@ const CompanySelectPage = ({ changeDisplay }: Props) => {
           <S.TBody>
             {falseData.map((d, k) => (
               <>
-                <S.Row>
+                <S.Row key={k}>
                   <S.Td>{d.corporateReason}</S.Td>
                   <S.Td>{d.email}</S.Td>
                   <S.Td>{d.registerCode}</S.Td>
                   <S.Td>{d.stateIncription}</S.Td>
                   <S.Td>
-                    <S.EnterButton>
+                    <S.EnterButton onClick={() => handleSubmit(d)}>
                       <span>Entrar</span>
                       <Arrow width={24} />
                     </S.EnterButton>
