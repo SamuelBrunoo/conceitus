@@ -22,6 +22,5 @@ export const BtnText = styled.span`
   white-space: nowrap;
   color: ${({ theme }) => theme.colors.blue.secondaryDark};
   font-size: 16px;
-  font-family: "Quicksand";
   font-weight: 600;
 `

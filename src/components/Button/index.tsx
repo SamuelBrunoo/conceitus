@@ -1,6 +1,5 @@
 import React from "react"
 import * as S from "./styles"
-import { Link } from "react-router-dom"
 
 type Props = {
   type: 'primary' | 'secondary' | 'tertiary'
