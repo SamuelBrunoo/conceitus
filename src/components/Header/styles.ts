@@ -9,17 +9,18 @@ export const Bg = styled.header`
   right: 0;
   left: 0;
   z-index: 100;
- `
+`
 
-export const Container = styled.div<{submenu?: boolean}>`
+export const Container = styled.div<{ submenu?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 48px;
   flex: 1;
   max-width: 100%;
-  padding: 4px 16px 4px ${({ submenu }) => submenu ? 80 : 16}px;
-  background-color: ${({ submenu, theme }) => submenu ? theme.colors.blue.primaryDark : theme.colors.blue.secondaryDark};
+  padding: 4px 16px 4px ${({ submenu }) => (submenu ? 80 : 16)}px;
+  background-color: ${({ submenu, theme }) =>
+    submenu ? theme.colors.blue.primaryDark : theme.colors.blue.secondaryDark};
 `
 
 export const NavigationArea = styled.div`
@@ -60,13 +61,6 @@ export const UserArea = styled.div`
   gap: 30px;
 
   span {
-    padding: 0 .3em;
-  }
-
-  div {
-    width: 24px;
-    height: 24px;
-    border-radius: 24px;
-    background-color: ${({theme}) => theme.colors.white.primary};
+    padding: 0 0.3em;
   }
 `

@@ -6,10 +6,10 @@ import { useState } from "react"
 import Select from "../../Select"
 
 type Props = {
-  // userLevel: number | string
+  closeFn: () => void
 }
 
-const NewEntry = ({}: Props) => {
+const NewEntry = ({ closeFn }: Props) => {
   const [title, setTitle] = useState("")
   const [value, setValue] = useState("")
   const [manufacturer, setManufacturer] = useState("")
@@ -25,8 +25,8 @@ const NewEntry = ({}: Props) => {
         <S.Container>
           <S.ModalTitle>Nova entrada</S.ModalTitle>
           <S.ButtonsArea>
-            <Button type="tertiary" title="Cancelar" action={() => {}} />
-            <Button type="primary" title="Salvar" action={() => {}} />
+            <Button type="tertiary" title="Cancelar" action={closeFn} />
+            <Button type="primary" title="Salvar" action={closeFn} />
           </S.ButtonsArea>
         </S.Container>
         <S.Container submenu>

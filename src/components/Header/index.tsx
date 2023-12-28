@@ -4,6 +4,7 @@ import Dropdown from "../Dropdown"
 import * as icons from "../../utils/imports/icons"
 import Button from "../Button"
 import Modal from "../Modal"
+import { useState } from "react"
 
 type Props = {
   userLevel: number | string
@@ -192,6 +193,8 @@ const submenuData = [
 ]
 
 const Header = ({ userLevel }: Props) => {
+  const [showingModal, setShowingModal] = useState(false)
+
   const renderSubItems = () => {
     return submenuData.map((item, k) => {
       return (
@@ -224,7 +227,9 @@ const Header = ({ userLevel }: Props) => {
 
   return (
     <>
-      <Modal.NewEntry />
+      {showingModal && (
+        <Modal.NewEntry closeFn={() => setShowingModal(false)} />
+      )}
       <S.Bg>
         <S.Container>
           <S.NavigationArea>
@@ -236,12 +241,15 @@ const Header = ({ userLevel }: Props) => {
 
             <S.ItemsArea>{renderMainItems()}</S.ItemsArea>
 
-            {/* User */}
           </S.NavigationArea>
           <S.UserArea>
-            <Button type={"primary"} title="Nova entrada" action={() => null} />
-            <div></div>
-            <div></div>
+            <Button
+              type={"primary"}
+              title="Nova entrada"
+              action={() => setShowingModal(true)}
+            />
+            <Dropdown.MenuCompany />
+            <Dropdown.MenuUser />
           </S.UserArea>
         </S.Container>
         {(userLevel as number) > 1 && (
