@@ -3,6 +3,7 @@ import * as S from "./styles"
 import Dropdown from "../Dropdown"
 import * as icons from "../../utils/imports/icons"
 import Button from "../Button"
+import Modal from "../Modal"
 
 type Props = {
   userLevel: number | string
@@ -222,33 +223,36 @@ const Header = ({ userLevel }: Props) => {
   }
 
   return (
-    <S.Bg>
-      <S.Container>
-        <S.NavigationArea>
-          <S.HomeItem>
-            <Link to={"/dashboard"}>
-              <icons.HomeFilled width={24} fill={"#FFF"} />
-            </Link>
-          </S.HomeItem>
-
-          <S.ItemsArea>{renderMainItems()}</S.ItemsArea>
-
-          {/* User */}
-        </S.NavigationArea>
-        <S.UserArea>
-          <Button type={"primary"} title="Nova entrada" action={() => null} />
-          <div></div>
-          <div></div>
-        </S.UserArea>
-      </S.Container>
-      {(userLevel as number) > 1 && (
-        <S.Container submenu={true}>
+    <>
+      <Modal.NewEntry />
+      <S.Bg>
+        <S.Container>
           <S.NavigationArea>
-            <S.ItemsArea>{renderSubItems()}</S.ItemsArea>
+            <S.HomeItem>
+              <Link to={"/dashboard"}>
+                <icons.HomeFilled width={24} fill={"#FFF"} />
+              </Link>
+            </S.HomeItem>
+
+            <S.ItemsArea>{renderMainItems()}</S.ItemsArea>
+
+            {/* User */}
           </S.NavigationArea>
+          <S.UserArea>
+            <Button type={"primary"} title="Nova entrada" action={() => null} />
+            <div></div>
+            <div></div>
+          </S.UserArea>
         </S.Container>
-      )}
-    </S.Bg>
+        {(userLevel as number) > 1 && (
+          <S.Container submenu={true}>
+            <S.NavigationArea>
+              <S.ItemsArea>{renderSubItems()}</S.ItemsArea>
+            </S.NavigationArea>
+          </S.Container>
+        )}
+      </S.Bg>
+    </>
   )
 }
 

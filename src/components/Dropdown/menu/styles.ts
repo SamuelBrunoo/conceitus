@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
 `
 
 export const Item = styled.div`
+  color: ${({ theme }) => theme.colors.white.primary};
+
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.white.primary};

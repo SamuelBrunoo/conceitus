@@ -14,7 +14,7 @@ const Button = ({ type, title, action }: Props) => {
 
   return (
     <S.Btn type={type} onClick={handlePress}>
-      <S.BtnText>{title}</S.BtnText>
+      <S.BtnText type={type}>{title}</S.BtnText>
     </S.Btn>
   )
 }

@@ -5,6 +5,7 @@ import { ReactComponent as Arrow } from "../../assets/icons/arrow.svg"
 import { ReactComponent as Balance } from "../../assets/icons/balance.svg"
 import { ReactComponent as Book } from "../../assets/icons/book.svg"
 import { ReactComponent as BookFilled } from "../../assets/icons/book_filled.svg"
+import { ReactComponent as Calendar } from "../../assets/icons/calendar.svg"
 import { ReactComponent as CancelCircle } from "../../assets/icons/cancel_circle.svg"
 import { ReactComponent as ColorFill } from "../../assets/icons/color_fill.svg"
 import { ReactComponent as Dropdown } from "../../assets/icons/dropdown.svg"
@@ -40,6 +41,7 @@ export {
   Balance,
   Book,
   BookFilled,
+  Calendar,
   CancelCircle,
   ColorFill,
   Dropdown,
