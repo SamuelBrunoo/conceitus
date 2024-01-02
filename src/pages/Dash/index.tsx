@@ -2,7 +2,7 @@ import React from "react"
 import * as S from "./styles"
 import DashCard from "../../components/DashCard"
 
-import * as Icons from "../../utils/imports/icons"
+import Dropdown from "../../components/Dropdown"
 
 const Dash = () => {
   return (
@@ -13,7 +13,7 @@ const Dash = () => {
             <S.STitle>DRE</S.STitle>
             <S.SDescription>Descrição do serviço</S.SDescription>
           </S.SHDetails>
-          <Icons.MoreIcon width={24} />
+          <Dropdown.More options={[]} />
         </S.SectionHeader>
         <S.SectionContent>
           <S.SRow>
@@ -35,7 +35,7 @@ const Dash = () => {
             <S.STitle>Fluxo de caixa</S.STitle>
             <S.SDescription>Descrição do outro serviço</S.SDescription>
           </S.SHDetails>
-          <Icons.MoreIcon width={24} />
+          <Dropdown.More options={[]} />
         </S.SectionHeader>
         <S.SectionContent>
           <S.SRow>
