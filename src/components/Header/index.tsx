@@ -193,7 +193,7 @@ const submenuData = [
 ]
 
 const Header = ({ userLevel }: Props) => {
-  const [showingModal, setShowingModal] = useState(true)
+  const [showingModal, setShowingModal] = useState(false)
 
   const renderSubItems = () => {
     return submenuData.map((item, k) => {
@@ -240,7 +240,6 @@ const Header = ({ userLevel }: Props) => {
             </S.HomeItem>
 
             <S.ItemsArea>{renderMainItems()}</S.ItemsArea>
-
           </S.NavigationArea>
           <S.UserArea>
             <Button

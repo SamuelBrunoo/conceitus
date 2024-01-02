@@ -2,7 +2,7 @@ import * as S from "../styles"
 import * as Icons from "../../../utils/imports/icons"
 import Button from "../../Button"
 import Input from "../../Input"
-import { ReactNode, useEffect, useState } from "react"
+import { useState } from "react"
 import Select from "../../Select"
 import Quill from "react-quill"
 import "react-quill/dist/quill.snow.css"
@@ -90,20 +90,11 @@ const NewEntry = ({ closeFn }: Props) => {
               onChange={setDetails}
               modules={{
                 toolbar: [
-                  // [{ size: ['Pequeno', 2, 3, false] }],
-                  // [{ header: [1, 2, 3, false] }],
                   ["bold", "italic", "underline"],
                   [{ list: "ordered" }, { indent: "-1" }, { indent: "+1" }],
                 ],
               }}
-              formats={[
-                "bold",
-                "italic",
-                "underline",
-                // "header",
-                "indent",
-                "list",
-              ]}
+              formats={["bold", "italic", "underline", "indent", "list"]}
             />
           </S.FormRow>
           <S.FormRow>
