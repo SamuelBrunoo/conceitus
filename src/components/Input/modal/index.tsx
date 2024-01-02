@@ -26,7 +26,7 @@ const InputModal = ({
     const d = new Date(v)
 
     const day = padValue(d.getDate())
-    const month = padValue(d.getMonth())
+    const month = padValue(d.getMonth() + 1)
     const year = d.getFullYear()
     
     return `${day}/${month}/${year}`

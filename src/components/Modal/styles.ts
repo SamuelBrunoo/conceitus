@@ -13,7 +13,7 @@ export const Bg = styled.div`
   background-color: ${({ theme }) => theme.colors.black.secondary};
 `
 
- export const Box = styled.div`
+export const Box = styled.div`
   background-color: ${({ theme }) => theme.colors.white.primary};
   border-radius: 24px;
   overflow: hidden;
@@ -22,15 +22,17 @@ export const Bg = styled.div`
   margin: auto 48px;
 `
 
-export const Container = styled.div<{submenu?: boolean}>`
+export const Container = styled.div<{ submenu?: boolean }>`
   display: flex;
-  justify-content: ${({ submenu }) => submenu ? 'flex-start' : 'space-between'};
+  justify-content: ${({ submenu }) =>
+    submenu ? "flex-start" : "space-between"};
   align-items: center;
-  gap: ${({ submenu }) => submenu ? 10 : 48}px;
+  gap: ${({ submenu }) => (submenu ? 10 : 48)}px;
   flex: 1;
   max-width: 100%;
   padding: 16px 24px;
-  background-color: ${({ submenu, theme }) => submenu ? theme.colors.blue.primaryDark : theme.colors.blue.secondaryDark};
+  background-color: ${({ submenu, theme }) =>
+    submenu ? theme.colors.blue.primaryDark : theme.colors.blue.secondaryDark};
   color: ${({ theme }) => theme.colors.white.primary};
 `
 
@@ -58,6 +60,22 @@ export const FormRow = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+
+  .quill {
+    background-color: ${({ theme }) => theme.colors.blue.primaryLight};
+    width: 100%;
+    border-radius: 8px;
+
+    div {
+      border: none;
+    }
+
+    .ql-container .ql-editor.ql-blank::before {
+      font-style: normal;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  }
 `
 
 export const NowBox = styled.div`

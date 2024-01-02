@@ -193,7 +193,7 @@ const submenuData = [
 ]
 
 const Header = ({ userLevel }: Props) => {
-  const [showingModal, setShowingModal] = useState(false)
+  const [showingModal, setShowingModal] = useState(true)
 
   const renderSubItems = () => {
     return submenuData.map((item, k) => {

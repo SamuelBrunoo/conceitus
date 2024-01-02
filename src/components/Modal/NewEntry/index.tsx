@@ -2,8 +2,10 @@ import * as S from "../styles"
 import * as Icons from "../../../utils/imports/icons"
 import Button from "../../Button"
 import Input from "../../Input"
-import { useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import Select from "../../Select"
+import Quill from "react-quill"
+import "react-quill/dist/quill.snow.css"
 
 type Props = {
   closeFn: () => void
@@ -81,10 +83,27 @@ const NewEntry = ({ closeFn }: Props) => {
             />
           </S.FormRow>
           <S.FormRow>
-            <Input.Modal
-              label="Detalhes"
+            <Quill
+              theme={"snow"}
+              placeholder="Detalhes"
               value={details}
               onChange={setDetails}
+              modules={{
+                toolbar: [
+                  // [{ size: ['Pequeno', 2, 3, false] }],
+                  // [{ header: [1, 2, 3, false] }],
+                  ["bold", "italic", "underline"],
+                  [{ list: "ordered" }, { indent: "-1" }, { indent: "+1" }],
+                ],
+              }}
+              formats={[
+                "bold",
+                "italic",
+                "underline",
+                // "header",
+                "indent",
+                "list",
+              ]}
             />
           </S.FormRow>
           <S.FormRow>

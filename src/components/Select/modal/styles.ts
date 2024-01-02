@@ -51,6 +51,7 @@ export const OptionsArea = styled.div<{ visible: boolean }>`
   border-radius: 8px;
   max-height: 180px;
   overflow-y: auto;
+  z-index: 5;
 `
 
 export const Option = styled.div`
