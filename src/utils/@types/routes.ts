@@ -1,1 +1,1 @@
-export type TPages = "dashboard"
+export type TPages = "dashboard" | "dre"

@@ -3,6 +3,7 @@ import { TPages } from "../../utils/@types/routes"
 import Dash from "../Dash"
 import Header from "../../components/Header"
 import * as S from "./styles"
+import DRE from "../DRE"
 
 type Props = {
   page: TPages
@@ -13,6 +14,8 @@ const Template = ({ page }: Props) => {
     switch (page) {
       case "dashboard":
         return <Dash />
+      case "dre":
+        return <DRE />
     }
   }
 

@@ -15,6 +15,10 @@ const routes = createBrowserRouter([
         path: "",
         element: <Template page={"dashboard"} />,
       },
+      {
+        path: "dre",
+        element: <Template page={"dre"} />,
+      },
     ],
   },
 ])

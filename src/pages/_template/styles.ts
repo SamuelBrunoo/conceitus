@@ -7,6 +7,7 @@ export const Page = styled.div`
 `
 
 export const Wrapper = styled.main`
+  position: relative;
   display: flex;
   justify-content: center;
   flex: 1;
@@ -16,4 +17,8 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 24px;
   flex: 1;
+
+  &:has(.bigger) {
+    max-width: 1480px;
+  }
 `
