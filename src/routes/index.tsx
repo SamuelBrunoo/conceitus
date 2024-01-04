@@ -5,6 +5,7 @@ import LoginPage from "../pages/login"
 import Dash from "../pages/Dash"
 import DRE from "../pages/DRE"
 import AuthRoute from "./authroute"
+import Entries from "../pages/Entries"
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/dashboard" element={<AuthRoute />}>
           <Route path="" element={<Dash />} />
           <Route path="dre" element={<DRE />} />
+          <Route path="entries" element={<Entries />} />
         </Route>
 
         {/* sys routes */}

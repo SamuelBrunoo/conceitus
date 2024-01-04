@@ -103,6 +103,8 @@ export const EnterButton = styled.button`
   cursor: pointer;
 `
 
+// Pagination
+
 export const Pagination = styled.div`
   display: flex;
   align-items: center;
