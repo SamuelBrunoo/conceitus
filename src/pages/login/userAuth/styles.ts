@@ -14,6 +14,10 @@ export const InputBox = styled.div`
   background-color: rgba(77, 94, 144, 0.05);
   border-radius: 4px;
   overflow: hidden;
+
+  svg {
+    cursor: pointer;
+  }
 `
 
 export const LoginInput = styled.input`

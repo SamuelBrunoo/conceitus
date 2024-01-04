@@ -1,26 +1,8 @@
-import { TStore } from "../../utils/@types/store"
+import { TUserShelf } from "../../utils/@types/store"
 
-type TSet = (
-  partial:
-    | TStore
-    | Partial<TStore>
-    | ((state: TStore) => TStore | Partial<TStore>),
-  replace?: boolean | undefined
-) => void
-
-const userShelf = (set: TSet) => {
+const userShelf = (): TUserShelf => {
   return {
     isAuth: false,
-    setAuth: (state: boolean) =>
-      set((store) => {
-        return {
-          ...store,
-          user: {
-            ...store.user,
-            isAuth: state,
-          },
-        }
-      }),
   }
 }
 

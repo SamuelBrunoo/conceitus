@@ -28,11 +28,17 @@ const falseData = [
 type Props = {
   changeDisplay: () => void
   handleSignIn: (data?: any) => Promise<void | boolean>
+  handleSignOut: () => void
 }
 
-const CompanySelectPage = ({ changeDisplay, handleSignIn }: Props) => {
+const CompanySelectPage = ({
+  changeDisplay,
+  handleSignIn,
+  handleSignOut,
+}: Props) => {
   const handleOut = () => {
     changeDisplay()
+    handleSignOut()
   }
 
   const handleSubmit = (company: any) => {
@@ -82,13 +88,15 @@ const CompanySelectPage = ({ changeDisplay, handleSignIn }: Props) => {
         </S.Table>
         <S.Bottom>
           <S.OutButton onClick={handleOut}>Sair</S.OutButton>
-          <S.Pagination>
-            <Arrow />
-            <S.PaginationItem active={false}>2</S.PaginationItem>
-            <S.PaginationItem active={true}>3</S.PaginationItem>
-            <S.PaginationItem active={false}>4</S.PaginationItem>
-            <Arrow />
-          </S.Pagination>
+          {falseData.length > 3 && (
+            <S.Pagination>
+              <Arrow />
+              <S.PaginationItem active={false}>2</S.PaginationItem>
+              <S.PaginationItem active={true}>3</S.PaginationItem>
+              <S.PaginationItem active={false}>4</S.PaginationItem>
+              <Arrow />
+            </S.Pagination>
+          )}
         </S.Bottom>
       </S.TableArea>
     </>

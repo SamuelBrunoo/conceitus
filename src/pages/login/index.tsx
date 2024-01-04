@@ -9,7 +9,10 @@ import getStore from "../../store"
 
 const LoginPage = () => {
   const navigation = useNavigate()
-  const { user } = getStore()
+  const user = getStore((store) => ({
+    ...store.user,
+    ...store.controllers.user,
+  }))
 
   const [loading, setLoading] = useState(false)
   const [showing, setShowing] = useState(true)
@@ -26,11 +29,13 @@ const LoginPage = () => {
 
   const renderDisplay = () => {
     return display === "auth" ? (
-      <AuthPage changeDisplay={changeDisplay} />
+      <AuthPage key={'aths'} changeDisplay={changeDisplay} />
     ) : (
       <CompanySelectPage
+        key={'cmps'}
         changeDisplay={changeDisplay}
         handleSignIn={handleSignIn}
+        handleSignOut={handleSignOut}
       />
     )
   }
@@ -41,6 +46,15 @@ const LoginPage = () => {
     // ...
     setTimeout(() => {
       user.setAuth(true)
+      navigation("/dashboard")
+      setLoading(false)
+    }, 3000)
+  }
+
+  const handleSignOut = async () => {
+    // ...
+    setTimeout(() => {
+      user.setAuth(false)
       navigation("/dashboard")
       setLoading(false)
     }, 3000)

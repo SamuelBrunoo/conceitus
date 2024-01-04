@@ -13,6 +13,7 @@ import { ReactComponent as Expand } from "../../assets/icons/expand.svg"
 import { ReactComponent as FlagImportant } from "../../assets/icons/flag_important.svg"
 import { ReactComponent as FlagImportantFilled } from "../../assets/icons/flag_important_filled.svg"
 import { ReactComponent as GridView } from "../../assets/icons/grid_view.svg"
+import { ReactComponent as Hide } from "../../assets/icons/hide.svg"
 import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg"
 import { ReactComponent as HomeFilled } from "../../assets/icons/home_white.svg"
 import { ReactComponent as InfoCircle } from "../../assets/icons/info.svg"
@@ -30,6 +31,7 @@ import { ReactComponent as Priority } from "../../assets/icons/priority.svg"
 import { ReactComponent as Search } from "../../assets/icons/search.svg"
 import { ReactComponent as Settings } from "../../assets/icons/settings.svg"
 import { ReactComponent as SettingsFilled } from "../../assets/icons/settings_filled.svg"
+import { ReactComponent as Show } from "../../assets/icons/show.svg"
 import { ReactComponent as Users } from "../../assets/icons/users.svg"
 import { ReactComponent as UsersFilled } from "../../assets/icons/users_filled.svg"
 
@@ -49,6 +51,7 @@ export {
   FlagImportant,
   FlagImportantFilled,
   GridView,
+  Hide,
   HomeIcon,
   HomeFilled,
   InfoCircle,
@@ -66,6 +69,7 @@ export {
   Search,
   Settings,
   SettingsFilled,
+  Show,
   Users,
   UsersFilled,
 }

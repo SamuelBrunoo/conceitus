@@ -1,5 +1,5 @@
 import * as S from "./styles"
-import { LogoDark, InfoCircle } from "../../../utils/imports/icons"
+import * as Icons from "../../../utils/imports/icons"
 import { useState } from "react"
 
 type Props = {
@@ -7,6 +7,8 @@ type Props = {
 }
 
 const AuthPage = ({ changeDisplay }: Props) => {
+  const [showPass, setShowPass] = useState(false)
+
   const [userName, setUserName] = useState("")
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState({
@@ -56,7 +58,7 @@ const AuthPage = ({ changeDisplay }: Props) => {
 
   return (
     <>
-      <LogoDark />
+      <Icons.LogoDark />
       <S.FormArea>
         <S.InputBox>
           <S.LoginInput
@@ -64,15 +66,19 @@ const AuthPage = ({ changeDisplay }: Props) => {
             value={userName}
             onChange={(e) => handleField("userName", e.target.value)}
           />
-          <InfoCircle />
         </S.InputBox>
         <S.InputBox>
           <S.LoginInput
             placeholder="Senha"
             value={password}
+            type={showPass ? "text" : "password"}
             onChange={(e) => handleField("password", e.target.value)}
           />
-          <InfoCircle />
+          {showPass ? (
+            <Icons.Show width={20} onClick={() => setShowPass(false)} />
+          ) : (
+            <Icons.Hide width={20} onClick={() => setShowPass(true)} />
+          )}
         </S.InputBox>
         <S.SubmitButton
           onClick={handleSubmit}
