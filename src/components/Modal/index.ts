@@ -1,5 +1,7 @@
 import NewEntry from "./NewEntry"
 
-export default {
+const versions = {
   NewEntry,
 }
+
+export default versions

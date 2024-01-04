@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef } from "react"
 import * as S from "./styles"
 import { useNavigate } from "react-router-dom"
 import * as Icons from "../../../utils/imports/icons"

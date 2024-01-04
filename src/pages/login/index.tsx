@@ -5,11 +5,12 @@ import AuthPage from "./userAuth"
 import CompanySelectPage from "./companySelect"
 import { useNavigate } from "react-router-dom"
 import LoadingOverlay from "../../components/_loadingoverlay"
+import getStore from "../../store"
 
 const LoginPage = () => {
-
   const navigation = useNavigate()
-  
+  const { user } = getStore()
+
   const [loading, setLoading] = useState(false)
   const [showing, setShowing] = useState(true)
   const [display, setDisplay] = useState<"auth" | "select">("auth")
@@ -27,17 +28,20 @@ const LoginPage = () => {
     return display === "auth" ? (
       <AuthPage changeDisplay={changeDisplay} />
     ) : (
-      <CompanySelectPage changeDisplay={changeDisplay} handleSignIn={handleSignIn} />
+      <CompanySelectPage
+        changeDisplay={changeDisplay}
+        handleSignIn={handleSignIn}
+      />
     )
   }
 
   const handleSignIn = async (company?: any) => {
     setLoading(true)
-    
+
     // ...
-    console.log(company)
     setTimeout(() => {
-      navigation('/dashboard')
+      user.setAuth(true)
+      navigation("/dashboard")
       setLoading(false)
     }, 3000)
   }
@@ -47,7 +51,9 @@ const LoginPage = () => {
       <LoadingOverlay visible={loading} />
       <S.Page className="withBg">
         <S.Container isAuthing={display === "auth"} showing={showing}>
-          <S.Content isAuthing={display === "auth"}>{renderDisplay()}</S.Content>
+          <S.Content isAuthing={display === "auth"}>
+            {renderDisplay()}
+          </S.Content>
         </S.Container>
         <S.CompanyLinks>
           <S.DiscretLink href={"/"}>Entre em contato</S.DiscretLink>

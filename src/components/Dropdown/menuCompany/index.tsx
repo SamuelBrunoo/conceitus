@@ -1,15 +1,12 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef } from "react"
 import * as S from "./styles"
-import { Dropdown } from "../../../utils/imports/icons"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import * as Icons from "../../../utils/imports/icons"
 
 const MenuDropdown = () => {
   const navigate = useNavigate()
 
   const dropRef = useRef<HTMLDivElement>(null)
-  const [opened, setOpened] = useState(false)
-  const [search, setSearch] = useState("")
 
   const nav = (link: string) => {
     navigate(link)

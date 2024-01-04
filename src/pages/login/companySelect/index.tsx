@@ -52,9 +52,7 @@ const CompanySelectPage = ({ changeDisplay, handleSignIn }: Props) => {
               <S.Th>Insc. Estadual</S.Th>
               <S.Th>
                 <S.SearchBox>
-                  <S.SearchInput
-                    placeholder={"Buscar"}
-                  />
+                  <S.SearchInput placeholder={"Buscar"} />
                   <S.SearchActionBtn>
                     <Search width={24} />
                   </S.SearchActionBtn>
