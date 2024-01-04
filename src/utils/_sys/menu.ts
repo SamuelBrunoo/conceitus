@@ -147,37 +147,61 @@ export const menuData = [
 
 export const submenuData = [
   {
-    icon: icons.Apartment,
+    icons: {
+      IsOn: icons.Apartment,
+      IsNot: icons.Apartment,
+    },
     title: "Minha organização",
     linkAll: "/dashboard",
+    unique: "myorg",
   },
   {
-    icon: icons.UsersFilled,
+    icons: {
+      IsOn: icons.UsersFilled,
+      IsNot: icons.Users,
+    },
     title: "Membros",
     linkAll: "/dashboard",
+    unique: "members",
   },
   {
-    icon: icons.GridView,
+    icons: {
+      IsOn: icons.GridView,
+      IsNot: icons.GridView,
+    },
     title: "Módulos",
     dropdownTitle: "Entradas",
     dropDownLink: "/dashboard",
     options: [],
+    unique: "modules",
   },
   {
-    icon: icons.FlagImportant,
+    icons: {
+      IsOn: icons.FlagImportantFilled,
+      IsNot: icons.FlagImportant,
+    },
     title: "Entradas",
     linkAll: "/dashboard/entries",
+    unique: "entries",
   },
   {
-    icon: icons.Book,
+    icons: {
+      IsOn: icons.BookFilled,
+      IsNot: icons.Book,
+    },
     title: "Histórico de atividades",
     dropdownTitle: "Entradas",
     dropDownLink: "/dashboard",
     options: [],
+    unique: "history",
   },
   {
-    icon: icons.KeyIcon,
+    icons: {
+      IsOn: icons.KeyIcon,
+      IsNot: icons.KeyIcon,
+    },
     title: "Perfil de acesso",
     linkAll: "/dashboard",
+    unique: "profile",
   },
 ]

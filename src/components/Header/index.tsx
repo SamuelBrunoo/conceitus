@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 import * as S from "./styles"
 import Dropdown from "../Dropdown"
 import * as icons from "../../utils/imports/icons"
@@ -13,6 +13,20 @@ type Props = {
 
 const Header = ({ userLevel }: Props) => {
   const [showingModal, setShowingModal] = useState(false)
+
+  const { pathname } = useLocation()
+
+  const getMatchIcon = (
+    unique: string,
+    icons: {
+      IsOn: any
+      IsNot: any
+    }
+  ) => {
+    const page = pathname.split("/")[pathname.split("/").length - 1]
+
+    return page === unique ? icons.IsOn : icons.IsNot
+  }
 
   const renderMainItems = () => {
     return menus.menuData.map((item, k) => {
@@ -35,7 +49,7 @@ const Header = ({ userLevel }: Props) => {
         <Dropdown.Menu
           key={k}
           dropdownTitle={"Título"}
-          Icon={item.icon}
+          Icon={getMatchIcon(item.unique, item.icons)}
           menuTitle={item.title}
           options={item.options}
           linkAll={item.linkAll}
