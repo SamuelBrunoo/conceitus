@@ -18,7 +18,7 @@ export const Item = styled.div`
   }
 `
 
-export const VisibleArea = styled.div<{ to: string; turnedIcon: boolean }>`
+export const VisibleArea = styled.div<{ to: string }>`
   display: flex;
   align-items: center;
   gap: 10px;

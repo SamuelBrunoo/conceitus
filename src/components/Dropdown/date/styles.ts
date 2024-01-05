@@ -4,7 +4,7 @@ export const SelectArea = styled.div`
   position: relative;
 `
 
-export const DataArea = styled.div<{ nobg?: boolean; turnedIcon: boolean }>`
+export const DataArea = styled.div<{ nobg?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,13 @@ export const DataArea = styled.div<{ nobg?: boolean; turnedIcon: boolean }>`
   svg {
     transition: transform 0.3s;
     fill: ${({ theme }) => theme.colors.black.primary};
-    transform: rotate(${({ turnedIcon }) => (turnedIcon ? 180 : 0)}deg);
+    transform: rotate(0deg);
+  }
+
+  &.turnedIcon {
+    svg {
+      transform: rotate(180deg);
+    }
   }
 `
 

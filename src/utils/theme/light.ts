@@ -12,7 +12,9 @@ const light: DefaultTheme = {
       primaryLight: "rgba(27, 74, 174, 0.05)",
       secondaryDark: "rgba(67, 127, 212, 1)",
       secondaryLight: "rgba(67, 127, 212, 0.05)",
-      tertiary: "rgba(122, 139, 165, 1)"
+      tertiary: "rgba(122, 139, 165, 1)",
+      quaternary: "#457fd4",
+      quaternaryLight: "rgba(27, 74, 144, 0.05)"
     },
     grey: {
       primary: "rgba(217, 217, 217, 1)"

@@ -7,6 +7,7 @@ import Input from "../../components/Input"
 import Select from "../../components/Select"
 import Dropdown from "../../components/Dropdown"
 import { fEntries } from "../../utils/_falseData/entries"
+import { entriesTable } from "../../utils/_sys/entriestable"
 
 const Entries = () => {
   const [searchFilter, setSearchFilter] = useState("")
@@ -88,37 +89,17 @@ const Entries = () => {
 
       <S.Table>
         <S.THead>
-          <S.THCol>
-            <span>MÓDULO</span>
-          </S.THCol>
-          <S.THCol>
-            <span>ID</span>
-          </S.THCol>
-          <S.THCol>
-            <span>TÍTULO</span>
-          </S.THCol>
-          <S.THCol>
-            <span>VALOR</span>
-          </S.THCol>
-          <S.THCol>
-            <span>TIPO</span>
-          </S.THCol>
-          <S.THCol>
-            <span>FAMÍLIA</span>
-          </S.THCol>
-          <S.THCol>
-            <span>GRUPO</span>
-          </S.THCol>
-          <S.THCol>
-            <span>REPORTER</span>
-          </S.THCol>
-          <S.THCol>
-            <span>DATA / HORA</span>
-          </S.THCol>
+          <tr>
+            {entriesTable.columns.map((col, k) => (
+              <S.THCol key={k}>
+                <span>{col.title}</span>
+              </S.THCol>
+            ))}
+          </tr>
         </S.THead>
         <S.TBody>
           {fEntries.map((e, k) => (
-            <S.TRow>
+            <S.TRow key={k}>
               <S.TData>
                 <S.ModuleBox>
                   <span>{e.module}</span>
@@ -159,9 +140,15 @@ const Entries = () => {
       {fEntries.length > 12 && (
         <S.Pagination>
           <Icons.Arrow />
-          <S.PaginationItem active={false}>2</S.PaginationItem>
-          <S.PaginationItem active={true}>3</S.PaginationItem>
-          <S.PaginationItem active={false}>4</S.PaginationItem>
+          <S.PaginationItem className={false ? "active" : ""}>
+            2
+          </S.PaginationItem>
+          <S.PaginationItem className={true ? "active" : ""}>
+            3
+          </S.PaginationItem>
+          <S.PaginationItem className={false ? "active" : ""}>
+            4
+          </S.PaginationItem>
           <Icons.Arrow />
         </S.Pagination>
       )}

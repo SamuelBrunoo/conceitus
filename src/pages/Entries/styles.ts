@@ -233,21 +233,25 @@ export const Pagination = styled.div`
   }
 `
 
-export const PaginationItem = styled.button<{ active: boolean }>`
+export const PaginationItem = styled.button`
   border: none;
   outline: none;
-  background-color: ${({ active }) =>
-    active ? "rgba(27, 74, 144, 0.05)" : "transparent"};
+  background-color: transparent;
   transition: background-color 0.3s, color 0.3s;
   border-radius: 8px;
   padding: 4px 12px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  color: ${({ active }) => (active ? "#457fd4" : "#000")};
+  color: #000;
 
   &:hover {
-    color: #457fd4;
+    color: ${({ theme }) => theme.colors.blue.quaternary};
+  }
+
+  &.active {
+    background-color: ${({ theme }) => theme.colors.blue.quaternaryLight};
+    color: ${({ theme }) => theme.colors.blue.quaternary};
   }
 `
 

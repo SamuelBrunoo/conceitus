@@ -40,7 +40,11 @@ const DateDropdown = ({ label, value, onChange, nobg }: Props) => {
 
   return (
     <S.SelectArea>
-      <S.DataArea nobg={nobg} onClick={toggleDropdown} turnedIcon={showing}>
+      <S.DataArea
+        nobg={nobg}
+        onClick={toggleDropdown}
+        className={showing ? "turnedIcon" : ""}
+      >
         <S.Left secondaryColor={nobg}>
           {selected && <Icons.CancelCircle width={18} />}
           <S.SelectedInfo>{label}</S.SelectedInfo>

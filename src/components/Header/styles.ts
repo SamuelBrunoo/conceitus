@@ -11,16 +11,20 @@ export const Bg = styled.header`
   z-index: 100;
 `
 
-export const Container = styled.div<{ submenu?: boolean }>`
+export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 48px;
   flex: 1;
   max-width: 100%;
-  padding: 4px 16px 4px ${({ submenu }) => (submenu ? 80 : 16)}px;
-  background-color: ${({ submenu, theme }) =>
-    submenu ? theme.colors.blue.primaryDark : theme.colors.blue.secondaryDark};
+  padding: 4px 16px 4px 16px;
+  background-color: ${({ theme }) => theme.colors.blue.secondaryDark};
+
+  &.submenu {
+    padding-left: 80px;
+    background-color: ${({ theme }) => theme.colors.blue.primaryDark};
+  }
 `
 
 export const NavigationArea = styled.div`

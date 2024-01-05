@@ -65,8 +65,11 @@ const FilterSelect = ({ label, options, value, onChange, nobg }: Props) => {
 
   return (
     <S.SelectArea>
-      <S.DataArea nobg={nobg} onClick={toggleDropdown} turnedIcon={showing}>
-        <S.Left secondaryColor={nobg}>
+      <S.DataArea
+        onClick={toggleDropdown}
+        className={`${showing ? "turnedIcon" : ""}${nobg ? "nobg" : ""}`}
+      >
+        <S.Left className={nobg ? "secondary" : ""}>
           <S.SelectedInfo>{label}</S.SelectedInfo>
           {selected && <S.SelectedInfo>{selected.value ?? ""}</S.SelectedInfo>}
         </S.Left>

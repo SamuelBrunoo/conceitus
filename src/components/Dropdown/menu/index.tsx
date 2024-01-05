@@ -30,8 +30,9 @@ const MenuDropdown = ({
 }: Props) => {
   const navigate = useNavigate()
 
+  const wrapperRef = useRef<null | HTMLDivElement>(null)
+
   const dropRef = useRef<HTMLDivElement>(null)
-  const [opened, setOpened] = useState(false)
   const [search, setSearch] = useState("")
   const [dataList, setDataList] = useState<TOption[]>([])
 
@@ -50,7 +51,7 @@ const MenuDropdown = ({
   }
 
   const handleClick = (
-    e:
+    e?:
       | React.MouseEvent<HTMLAnchorElement, MouseEvent>
       | React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
@@ -64,10 +65,10 @@ const MenuDropdown = ({
 
       if (!dropRef.current?.classList.contains("opened")) {
         if (dropRef.current) dropRef.current.classList.add("opened")
-        e.currentTarget.classList.add("opened")
+        if (e) e.currentTarget.classList.add("opened")
       } else {
         if (dropRef.current) dropRef.current.classList.remove("opened")
-        e.currentTarget.classList.remove("opened")
+        if (e) e.currentTarget.classList.remove("opened")
       }
     } else {
       navigate(linkAll)
@@ -80,22 +81,48 @@ const MenuDropdown = ({
   }
 
   useEffect(() => {
+    const collapseOwnDropdown = () => {
+      if (dropRef.current?.classList.contains("opened")) {
+        dropRef.current?.classList.remove("opened")
+        dropRef.current?.parentElement?.firstElementChild?.classList.remove(
+          "opened"
+        )
+      }
+    }
+
+    const handleClickOutside = (
+      e: any | React.MouseEvent<HTMLDivElement | HTMLElement, MouseEvent>
+    ) => {
+      if (
+        e.target !== dropRef.current &&
+        e.target !== dropRef.current?.parentElement &&
+        e.srcElement.offsetParent !== dropRef.current &&
+        e.srcElement.offsetParent !== dropRef.current?.parentElement &&
+        !e.target.classList.contains("dropdown-item-area") &&
+        !e.target.parentElement.classList.contains("dropdown-item-area")
+      )
+        collapseOwnDropdown()
+    }
+
+    if (!isLink) {
+      document.addEventListener("mousedown", handleClickOutside)
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside)
+      }
+    } else return
+  }, [dropRef, isLink])
+
+  useEffect(() => {
     if (options) setDataList(options ?? [])
   }, [options])
 
-  useEffect(() => {
-    const isDropped = dropRef.current?.classList.contains("opened")
-    setOpened(isDropped ?? false)
-  }, [dropRef.current?.classList])
-
   return (
-    <S.Wrapper>
+    <S.Wrapper ref={wrapperRef}>
       <S.Item>
         <Container
           to={linkAll ?? ""}
           onClick={handleClick}
-          className="dropdown-item-area"
-          turnedIcon={opened}
+          className="dropdown-item-area turnedIcon"
         >
           <Icon width={24} />
           <S.MenuTitle>{menuTitle}</S.MenuTitle>

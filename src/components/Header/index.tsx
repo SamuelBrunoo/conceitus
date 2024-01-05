@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import * as S from "./styles"
 import Dropdown from "../Dropdown"
 import * as icons from "../../utils/imports/icons"
@@ -85,7 +85,7 @@ const Header = ({ userLevel }: Props) => {
           </S.UserArea>
         </S.Container>
         {(userLevel as number) > 1 && (
-          <S.Container submenu={true}>
+          <S.Container className="submenu">
             <S.NavigationArea>
               <S.ItemsArea>{renderSubItems()}</S.ItemsArea>
             </S.NavigationArea>
