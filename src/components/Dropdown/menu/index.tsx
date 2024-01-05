@@ -93,15 +93,18 @@ const MenuDropdown = ({
     const handleClickOutside = (
       e: any | React.MouseEvent<HTMLDivElement | HTMLElement, MouseEvent>
     ) => {
-      if (
-        e.target !== dropRef.current &&
-        e.target !== dropRef.current?.parentElement &&
-        e.srcElement.offsetParent !== dropRef.current &&
-        e.srcElement.offsetParent !== dropRef.current?.parentElement &&
-        !e.target.classList.contains("dropdown-item-area") &&
-        !e.target.parentElement.classList.contains("dropdown-item-area")
-      )
-        collapseOwnDropdown()
+      console.log((e.target !== document.children[0]))
+      if (e.target !== document.children[0]) {
+        if (
+          e.target !== dropRef.current &&
+          e.target !== dropRef.current?.parentElement &&
+          e.srcElement.offsetParent !== dropRef.current &&
+          e.srcElement.offsetParent !== dropRef.current?.parentElement &&
+          !e.target.classList.contains("dropdown-item-area") &&
+          !e.target.parentElement.classList.contains("dropdown-item-area")
+        )
+          collapseOwnDropdown()
+      }
     }
 
     if (!isLink) {

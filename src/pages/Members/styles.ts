@@ -87,8 +87,42 @@ export const FilterBtn = styled.button`
   }
 `
 
+// Sections
+
+export const RolesSections = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+`
+
+export const RolesSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px 8px;
+`
+
+export const RSHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`
+
+export const RSTitle = styled.h3`
+  font-size: 1rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.black};
+`
+
+export const RSDescription = styled.span`
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.black};
+`
+
 // Table
 export const Table = styled.table`
+  width: 100%;
   border-spacing: 12px;
 `
 
@@ -103,10 +137,6 @@ export const THCol = styled.th`
     font-weight: 500;
     color: ${({ theme }) => theme.colors.black};
   }
-
-  &:nth-last-child(1) {
-    text-align: right;
-  }
 `
 
 export const TBody = styled.tbody``
@@ -115,17 +145,6 @@ export const TRow = styled.tr``
 
 export const TData = styled.td`
   padding: 6px 0;
-
-  &:nth-child(7),
-  &:nth-child(6) {
-    width: 8%;
-  }
-
-  &:nth-last-child(1) {
-    span {
-      text-align: right;
-    }
-  }
 `
 
 export const ModuleBox = styled.div`
@@ -191,7 +210,7 @@ export const Pagination = styled.div`
   svg {
     cursor: pointer;
   }
-
+  
   & svg:nth-child(1) {
     transform: rotate(-180deg);
   }

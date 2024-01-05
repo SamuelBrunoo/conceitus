@@ -161,7 +161,7 @@ export const submenuData = [
       IsNot: icons.Users,
     },
     title: "Membros",
-    linkAll: "/dashboard",
+    linkAll: "/dashboard/members",
     unique: "members",
   },
   {

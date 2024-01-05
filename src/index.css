@@ -35,6 +35,24 @@ body {
   display: none;
 }
 
+body::-webkit-scrollbar {
+  width: 12px;
+  height: 6px;
+  margin-left: -100px;
+  margin-top: -100px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(67, 127, 212, 1);
+  border-radius: 6px;
+  border-left: 3px solid rgb(255, 255, 255);
+}
+
+body::-webkit-scrollbar-track-piece {
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

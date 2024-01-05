@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Bg = styled.header`
   display: flex;
-  position: sticky;
+  position: fixed;
   flex-direction: column;
   overflow: visible;
   top: 0;

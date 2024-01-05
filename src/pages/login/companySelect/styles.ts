@@ -44,7 +44,6 @@ export const SearchBox = styled.div`
   background-color: rgba(27, 74, 144, 0.05);
   border-radius: 8px;
   max-width: 120px;
-
 `
 
 export const SearchActionBtn = styled.button`
@@ -111,22 +110,27 @@ export const Pagination = styled.div`
 
   color: #457fd4;
 
+  svg {
+    cursor: pointer;
+  }
+
   & svg:nth-child(1) {
     transform: rotate(-180deg);
   }
 `
 
-export const PaginationItem = styled.button<{active: boolean}>`
+export const PaginationItem = styled.button<{ active: boolean }>`
   border: none;
   outline: none;
-  background-color: ${({ active }) => active ? 'rgba(27, 74, 144, 0.05)' : 'transparent'};
-  transition: background-color .3s, color .3s;
+  background-color: ${({ active }) =>
+    active ? "rgba(27, 74, 144, 0.05)" : "transparent"};
+  transition: background-color 0.3s, color 0.3s;
   border-radius: 8px;
   padding: 4px 12px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  color: ${({ active }) => active ? '#457fd4' : '#000' };
+  color: ${({ active }) => (active ? "#457fd4" : "#000")};
 
   &:hover {
     color: #457fd4;

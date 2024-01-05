@@ -7,20 +7,15 @@ import Input from "../../components/Input"
 import Select from "../../components/Select"
 import Dropdown from "../../components/Dropdown"
 import { fEntries } from "../../utils/_falseData/entries"
-import { entriesTable } from "../../utils/_sys/entriestable"
+import { entriesTable } from "../../utils/_sys/tables/entriestable"
+import PageTitle from "../../components/PageTitle"
 
 const Entries = () => {
   const [searchFilter, setSearchFilter] = useState("")
 
   return (
     <S.Content>
-      <S.HeaderControl>
-        <S.HeaderContent>
-          <S.HeaderLeft>
-            <S.PageTitle>Entradas</S.PageTitle>
-          </S.HeaderLeft>
-        </S.HeaderContent>
-      </S.HeaderControl>
+      <PageTitle title="Entradas" />
 
       <S.FilterArea>
         <S.FASearch>

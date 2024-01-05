@@ -10,6 +10,7 @@ export const Wrapper = styled.main`
   position: relative;
   display: flex;
   justify-content: center;
+  margin-top: 104px;
   flex: 1;
 `
 
