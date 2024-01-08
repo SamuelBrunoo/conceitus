@@ -7,7 +7,7 @@ import Input from "../../components/Input"
 import Select from "../../components/Select"
 import Dropdown from "../../components/Dropdown"
 import PageTitle from "../../components/PageTitle"
-import { membersTable } from "../../utils/_sys/tables/memberstable"
+import { tables } from "../../utils/_sys"
 import { fMembers } from "../../utils/_falseData/members"
 
 const Members = () => {
@@ -80,7 +80,7 @@ const Members = () => {
           <S.Table>
             <S.THead>
               <tr>
-                {membersTable.columns.map((col, k) => (
+                {tables.members.columns.map((col, k) => (
                   <S.THCol key={k}>
                     <span>{col.title}</span>
                   </S.THCol>
@@ -143,7 +143,7 @@ const Members = () => {
           <S.Table>
             <S.THead>
               <tr>
-                {membersTable.columns.map((col, k) => (
+                {tables.members.columns.map((col, k) => (
                   <S.THCol key={k}>
                     <span>{col.title}</span>
                   </S.THCol>

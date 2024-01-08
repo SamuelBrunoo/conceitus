@@ -1,8 +1,8 @@
-import InputModal from "./modal"
+import InputDefault from "./default"
 import SearchInput from "./search"
 
 const Input = {
-  Modal: InputModal,
+  Default: InputDefault,
   Search: SearchInput,
 }
 

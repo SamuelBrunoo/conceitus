@@ -2,6 +2,7 @@ import { ReactComponent as AccountCircle } from "../../assets/icons/account_circ
 import { ReactComponent as Analytics } from "../../assets/icons/analytics.svg"
 import { ReactComponent as Apartment } from "../../assets/icons/apartment.svg"
 import { ReactComponent as Arrow } from "../../assets/icons/arrow.svg"
+import { ReactComponent as ArrowStrip } from "../../assets/icons/arrow_strip.svg"
 import { ReactComponent as Balance } from "../../assets/icons/balance.svg"
 import { ReactComponent as Book } from "../../assets/icons/book.svg"
 import { ReactComponent as BookFilled } from "../../assets/icons/book_filled.svg"
@@ -40,6 +41,7 @@ export {
   Analytics,
   Apartment,
   Arrow,
+  ArrowStrip,
   Balance,
   Book,
   BookFilled,

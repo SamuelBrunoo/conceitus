@@ -42,13 +42,13 @@ const NewEntry = ({ closeFn }: Props) => {
         </S.Container>
         <S.FormArea>
           <S.FormRow>
-            <Input.Modal
+            <Input.Default
               placeholder="Venda"
               label="Título da entrada"
               value={title}
               onChange={setTitle}
             />
-            <Input.Modal
+            <Input.Default
               placeholder="0,00"
               label="Valor total"
               value={value}
@@ -57,7 +57,7 @@ const NewEntry = ({ closeFn }: Props) => {
             />
           </S.FormRow>
           <S.FormRow>
-            <Input.Modal
+            <Input.Default
               placeholder="Vendedor X"
               label="Fabricante"
               value={manufacturer}
@@ -65,17 +65,19 @@ const NewEntry = ({ closeFn }: Props) => {
             />
           </S.FormRow>
           <S.FormRow>
-            <Select.Modal
+            <Select.Default
               label="Rateio"
               value={apportionment}
+              roOptions={[]}
               onChange={setApportionment}
             />
-            <Select.Modal
+            <Select.Default
               label="Periodicidade"
               value={frequency}
+              roOptions={[]}
               onChange={setFrequency}
             />
-            <Input.Modal
+            <Input.Default
               label="Competência"
               value={date}
               onChange={setDate}
@@ -98,7 +100,7 @@ const NewEntry = ({ closeFn }: Props) => {
             />
           </S.FormRow>
           <S.FormRow>
-            <Input.Modal
+            <Input.Default
               label="Reporter"
               value={reporter}
               onChange={setReporter}

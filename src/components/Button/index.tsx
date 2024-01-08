@@ -1,8 +1,10 @@
 import React from "react"
 import * as S from "./styles"
 
+export type TButtons = "primary" | "secondary" | "tertiary" | "delete" | "update"
+
 type Props = {
-  type: 'primary' | 'secondary' | 'tertiary'
+  type: TButtons
   title: string
   action: () => any
 }

@@ -3,6 +3,7 @@ import * as S from "./styles"
 import { Dropdown } from "../../../utils/imports/icons"
 import { Link, useNavigate } from "react-router-dom"
 import * as Icons from "../../../utils/imports/icons"
+import { collapseOpeneds } from "../../../utils/toolbox/collapseOpeneds"
 
 type Props = {
   dropdownTitle?: string
@@ -55,15 +56,10 @@ const MenuDropdown = ({
       | React.MouseEvent<HTMLAnchorElement, MouseEvent>
       | React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
-    if (!isLink) {
-      const anotherOpened = document.querySelectorAll(".opened")
-      for (let i = 0; i < anotherOpened.length; i++) {
-        const a = anotherOpened[i]
-        if (a && dropRef.current && a !== dropRef.current)
-          a.classList.remove("opened")
-      }
 
+    if (!isLink) {
       if (!dropRef.current?.classList.contains("opened")) {
+        collapseOpeneds()
         if (dropRef.current) dropRef.current.classList.add("opened")
         if (e) e.currentTarget.classList.add("opened")
       } else {
@@ -72,6 +68,7 @@ const MenuDropdown = ({
       }
     } else {
       navigate(linkAll)
+      collapseOpeneds()
     }
   }
 
@@ -93,7 +90,6 @@ const MenuDropdown = ({
     const handleClickOutside = (
       e: any | React.MouseEvent<HTMLDivElement | HTMLElement, MouseEvent>
     ) => {
-      console.log((e.target !== document.children[0]))
       if (e.target !== document.children[0]) {
         if (
           e.target !== dropRef.current &&

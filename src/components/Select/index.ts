@@ -1,9 +1,9 @@
-import SelectModal from "./modal"
+import SelectDefault from "./default"
 import SelectModalBread from "./modalBread"
 import FilterSelect from "./filter"
 
 const Select = {
-  Modal: SelectModal,
+  Default: SelectDefault,
   ModalBread: SelectModalBread,
   Filter: FilterSelect,
 }

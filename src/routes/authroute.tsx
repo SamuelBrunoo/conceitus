@@ -4,7 +4,7 @@ import { Navigate, Outlet } from "react-router-dom"
 import getStore from "../store"
 
 const AuthRoute = () => {
-  const { user } = getStore(store => store)
+  const { user } = getStore((store) => store)
 
   useEffect(() => {
     console.log("user", user)

@@ -4,8 +4,9 @@ import Dropdown from "../Dropdown"
 import * as icons from "../../utils/imports/icons"
 import Button from "../Button"
 import Modal from "../Modal"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { menus } from "../../utils/_sys"
+import { collapseOpeneds } from "../../utils/toolbox/collapseOpeneds"
 
 type Props = {
   userLevel: number | string
@@ -57,6 +58,30 @@ const Header = ({ userLevel }: Props) => {
       )
     })
   }
+
+  useEffect(() => {
+
+    const handleClickOutside = (
+      e: any | React.MouseEvent<HTMLDivElement | HTMLElement, MouseEvent>
+    ) => {
+      if (e.target !== document.children[0]) {
+        if (
+          !e.target.classList.contains("bbLink") &&
+          !e.target.parentElement.classList.contains("bbLink") &&
+          !e.target.classList.contains("dropdown-item-area") &&
+          !e.target.parentElement.classList.contains("dropdown-item-area") &&
+          !e.target.classList.contains("dropdown-menu") &&
+          !e.target.parentElement.classList.contains("dropdown-menu")
+        )
+          collapseOpeneds()
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   return (
     <>

@@ -6,6 +6,7 @@ import * as Icons from "../../../utils/imports/icons"
 const MenuDropdown = () => {
   const navigate = useNavigate()
 
+  const circRef = useRef<HTMLDivElement>(null)
   const dropRef = useRef<HTMLDivElement>(null)
 
   const nav = (link: string) => {
@@ -29,10 +30,16 @@ const MenuDropdown = () => {
     }
   }
 
+  const handleLink = (to: string) => {
+    console.log('LASKDJ')
+    nav(to)
+    if (circRef.current) circRef.current.click()
+  }
+
   return (
     <S.Wrapper>
       <S.Item>
-        <S.CtxCircle onClick={handleClick}>
+        <S.CtxCircle ref={circRef} onClick={handleClick} className="">
           <span>GT</span>
         </S.CtxCircle>
 
@@ -57,13 +64,13 @@ const MenuDropdown = () => {
           </S.DHeader>
           <S.DBody>
             <S.DList>
-              <S.DListItem onClick={() => nav("/dashboard")}>
+              <S.DListItem className={"bbLink"} onClick={() => handleLink("/settings/company")}>
                 <S.DItemLeft>
                   <Icons.Settings width={24} />
                   <S.DItemData>Configurações</S.DItemData>
                 </S.DItemLeft>
               </S.DListItem>
-              <S.DListItem onClick={() => nav("/dashboard")}>
+              <S.DListItem className={"bbLink"} onClick={() => handleLink("/dashboard")}>
                 <S.DItemLeft>
                   <Icons.LogoutIcon width={24} />
                   <S.DItemData>Sair</S.DItemData>

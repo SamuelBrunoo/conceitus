@@ -3,6 +3,9 @@ import styled from "styled-components"
 export const SelectArea = styled.div`
   position: relative;
   flex: 1;
+  background-color: ${({ theme }) => theme.colors.blue.primaryLight};
+  padding: 4px 8px;
+  border-radius: 8px;
 `
 
 export const DataArea = styled.div<{ turnedIcon: boolean }>`
@@ -10,9 +13,6 @@ export const DataArea = styled.div<{ turnedIcon: boolean }>`
   justify-content: space-between;
   align-items: center;
   gap: 4px;
-  background-color: ${({ theme }) => theme.colors.blue.primaryLight};
-  padding: 4px 8px;
-  border-radius: 8px;
   color: ${({ theme }) => theme.colors.black.primary};
   cursor: pointer;
 

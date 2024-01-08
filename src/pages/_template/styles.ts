@@ -18,7 +18,7 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 24px;
   flex: 1;
-  padding-bottom: 120px;
+  padding-bottom: 80px;
 
   &:has(.bigger) {
     max-width: 1480px;
