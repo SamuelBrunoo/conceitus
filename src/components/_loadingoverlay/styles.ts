@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-export const Bg = styled.div<{ showing: boolean }>`
-  display: ${({ showing }) => (showing ? "grid" : "none")};
+export const Bg = styled.div<{ $showing: boolean }>`
+  display: ${({ $showing }) => ($showing ? "grid" : "none")};
   place-items: center;
   position: absolute;
   top: 0;

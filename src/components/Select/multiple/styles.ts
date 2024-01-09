@@ -8,7 +8,7 @@ export const SelectArea = styled.div`
   border-radius: 8px;
 `
 
-export const DataArea = styled.div`
+export const DataArea = styled.div<{ $turnedIcon: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,11 +19,7 @@ export const DataArea = styled.div`
   svg {
     transition: transform 0.3s;
     fill: ${({ theme }) => theme.colors.black.primary};
-    transform: rotate(0deg);
-  }
-
-  &.turnedIcon svg {
-    transform: rotate(180deg);
+    transform: rotate(${({ $turnedIcon }) => ($turnedIcon ? 180 : 0)}deg);
   }
 `
 
@@ -50,6 +46,7 @@ export const OptionsArea = styled.div`
   top: calc(100% + 4px);
   right: 0;
   left: 0;
+  width: fit-content;
   background-color: ${({ theme }) => theme.colors.white.primary};
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
@@ -57,12 +54,16 @@ export const OptionsArea = styled.div`
   overflow-y: auto;
   z-index: 5;
 
-  &.visible {
+  &.opened {
     display: block;
   }
 `
 
 export const Option = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   background-color: transparent;
   transition: background-color 0.3s;
   padding: 8px;
@@ -71,4 +72,13 @@ export const Option = styled.div`
   &:hover {
     background-color: ${({ theme }) => theme.colors.blue.primaryLight};
   }
+`
+
+export const CheckArea = styled.div`
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  border: 1px solid ${({ theme }) => theme.colors.black.primary};
+  width: 18px;
+  height: 18px;
 `

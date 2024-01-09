@@ -31,7 +31,7 @@ const MenuDropdown = () => {
   }
 
   const handleLink = (to: string) => {
-    console.log('LASKDJ')
+    console.log("LASKDJ")
     nav(to)
     if (circRef.current) circRef.current.click()
   }
@@ -64,17 +64,19 @@ const MenuDropdown = () => {
           </S.DHeader>
           <S.DBody>
             <S.DList>
-              <S.DListItem className={"bbLink"} onClick={() => handleLink("/settings/company")}>
-                <S.DItemLeft>
-                  <Icons.Settings width={24} />
-                  <S.DItemData>Configurações</S.DItemData>
-                </S.DItemLeft>
+              <S.DListItem
+                className={"bbLink"}
+                onClick={() => handleLink("/settings/company")}
+              >
+                <Icons.Settings width={24} />
+                <S.DItemData>Configurações</S.DItemData>
               </S.DListItem>
-              <S.DListItem className={"bbLink"} onClick={() => handleLink("/dashboard")}>
-                <S.DItemLeft>
-                  <Icons.LogoutIcon width={24} />
-                  <S.DItemData>Sair</S.DItemData>
-                </S.DItemLeft>
+              <S.DListItem
+                className={"bbLink"}
+                onClick={() => handleLink("/dashboard")}
+              >
+                <Icons.LogoutIcon width={24} />
+                <S.DItemData>Sair</S.DItemData>
               </S.DListItem>
             </S.DList>
             <hr />

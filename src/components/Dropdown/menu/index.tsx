@@ -56,7 +56,6 @@ const MenuDropdown = ({
       | React.MouseEvent<HTMLAnchorElement, MouseEvent>
       | React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
-
     if (!isLink) {
       if (!dropRef.current?.classList.contains("opened")) {
         collapseOpeneds()

@@ -6,9 +6,8 @@ type Props = {
 }
 
 const LoadingOverlay = ({ visible }: Props) => {
-
   return (
-    <S.Bg showing={visible}>
+    <S.Bg $showing={visible}>
       <LogoDetailed width={360} height={360} />
     </S.Bg>
   )

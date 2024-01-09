@@ -60,18 +60,25 @@ const Header = ({ userLevel }: Props) => {
   }
 
   useEffect(() => {
+    const handleClickOutside = (e: any) => {
+      if (e.target && e.target !== document.children[0]) {
+        let el = e.target
+        let par = el.parentElement
+        let grandpa = par.parentElement
 
-    const handleClickOutside = (
-      e: any | React.MouseEvent<HTMLDivElement | HTMLElement, MouseEvent>
-    ) => {
-      if (e.target !== document.children[0]) {
         if (
-          !e.target.classList.contains("bbLink") &&
-          !e.target.parentElement.classList.contains("bbLink") &&
-          !e.target.classList.contains("dropdown-item-area") &&
-          !e.target.parentElement.classList.contains("dropdown-item-area") &&
-          !e.target.classList.contains("dropdown-menu") &&
-          !e.target.parentElement.classList.contains("dropdown-menu")
+          // bblink
+          !el.classList.contains("bbLink") &&
+          !par.classList.contains("bbLink") &&
+          !grandpa.classList.contains("bbLink") &&
+          // dropdown-item-area
+          !el.classList.contains("dropdown-item-area") &&
+          !par.classList.contains("dropdown-item-area") &&
+          !grandpa.classList.contains("dropdown-item-area") &&
+          // dropdown-menu
+          !el.classList.contains("dropdown-menu") &&
+          !par.classList.contains("dropdown-menu") &&
+          !grandpa.classList.contains("dropdown-menu")
         )
           collapseOpeneds()
       }

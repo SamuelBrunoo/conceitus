@@ -52,7 +52,7 @@ const CategoryDRE = () => {
           </S.RRValue>
         </S.RRValues>
       </S.ResumeRow>
-      <S.Box visible={showCatDetails}>
+      <S.Box $visible={showCatDetails}>
         <S.BoxWrapper>
           <S.BoxContent>
             <DataSelectorArea dataTypes={fDataTypes} />
@@ -99,7 +99,7 @@ const CategoryDRE = () => {
                     </S.RRValue>
                   </S.DIRValues>
                 </S.DIResume>
-                <S.SubListArea visible={subListVisible}>
+                <S.SubListArea $visible={subListVisible}>
                   <S.SubListWrapper>
                     <S.SubListContent>
                       <S.SLItem>

@@ -3,17 +3,13 @@ import styled from "styled-components"
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.blue.primaryLight};
-  border-radius: 20px;
-  padding: 16px;
-  flex: 1;
 `
 
 export const ResumeRow = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  justify-content: flex-start;
+  gap: 16px;
   cursor: pointer;
   padding: 8px 12px;
 
@@ -94,56 +90,50 @@ export const BoxContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 32px 8px 32px 16px;
+  padding: 20px 8px 32px 16px;
 `
 
 export const DataList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 `
 
 export const DataItem = styled.div`
   padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 `
 
 export const DIResume = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  justify-content: flex-start;
+  gap: 12px;
   padding: 8px 0;
   cursor: pointer;
 `
 
-export const DIRName = styled.div`
-  flex: 3;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 4px;
+export const DIRData = styled.span`
+  font-size: 1rem;
+  font-weight: 500;
 
-  svg {
-    transition: transform 0.3s;
-    transform: rotate(-90deg);
-
-    &.rotated {
-      transform: rotate(0deg);
-    }
-  }
-
-  span {
-    font-size: 1.215em;
-    font-weight: 700;
-    color: ${({ theme }) => theme.colors.black.primary};
+  &.bold {
+    font-weight: 600;
   }
 `
 
-export const DIRValues = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  flex: 7;
+export const Explanation = styled.div`
+  width: 80%;
+  align-self: flex-end;
+  padding: 4px 8px;
+  background-color: ${({ theme }) => theme.colors.blue.primaryLight};
+  border-radius: 4px;
+
+  span:nth-child(1) {
+    font-weight: 600;
+  }
 `
 
 export const SubListArea = styled.div<{ $visible: boolean }>`

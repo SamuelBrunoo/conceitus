@@ -25,7 +25,7 @@ const ConfigExpand = () => {
           className={showCatDetails ? "rotated" : ""}
         />
       </S.ResumeRow>
-      <S.Box visible={showCatDetails}>
+      <S.Box $visible={showCatDetails}>
         <S.BoxWrapper>
           <S.BoxContent>
             <S.DataList>
@@ -40,7 +40,7 @@ const ConfigExpand = () => {
                     <span>Faturamento</span>
                   </S.DIRName>
                 </S.DIResume>
-                <S.SubListArea visible={subListVisible}>
+                <S.SubListArea $visible={subListVisible}>
                   <S.SubListWrapper>
                     <S.SubListContent>
                       <S.SLItem>
@@ -99,7 +99,7 @@ const ConfigExpand = () => {
                     <span>Custos variáveis</span>
                   </S.DIRName>
                 </S.DIResume>
-                <S.SubListArea visible={subListVisible}>
+                <S.SubListArea $visible={subListVisible}>
                   <S.SubListWrapper>
                     <S.SubListContent>
                       <S.SLItem>
@@ -158,7 +158,7 @@ const ConfigExpand = () => {
                     <span>Custos fixos</span>
                   </S.DIRName>
                 </S.DIResume>
-                <S.SubListArea visible={subListVisible}>
+                <S.SubListArea $visible={subListVisible}>
                   <S.SubListWrapper>
                     <S.SubListContent>
                       <S.SLItem>

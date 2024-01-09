@@ -32,14 +32,17 @@ const SelectDefault = ({ label, value, roOptions, onChange }: Props) => {
 
   return (
     <S.SelectArea>
-      <S.DataArea onClick={toggleDropdown} turnedIcon={showing}>
+      <S.DataArea
+        onClick={toggleDropdown}
+        className={showing ? "turnedIcon" : ""}
+      >
         <S.Left>
           {label && <S.Label>{label}</S.Label>}
           <S.SelectedInfo>{selected?.value}</S.SelectedInfo>
         </S.Left>
         <Icons.Dropdown width={24} />
       </S.DataArea>
-      <S.OptionsArea visible={showing}>
+      <S.OptionsArea className={showing ? "visible" : ""}>
         {options.map((o, k) => (
           <S.Option key={k} onClick={() => handlePick(o)}>
             <span>{o.value}</span>

@@ -78,9 +78,9 @@ export const RRValue = styled.div`
   }
 `
 
-export const Box = styled.div<{ visible: boolean }>`
+export const Box = styled.div<{ $visible: boolean }>`
   display: grid;
-  grid-template-rows: ${({ visible }) => (visible ? 1 : 0)}fr;
+  grid-template-rows: ${({ $visible }) => ($visible ? 1 : 0)}fr;
   overflow: hidden;
   transition: grid-template-rows 0.3s;
 `
@@ -147,9 +147,9 @@ export const DIRValues = styled.div`
   flex: 7;
 `
 
-export const SubListArea = styled.div<{ visible: boolean }>`
+export const SubListArea = styled.div<{ $visible: boolean }>`
   display: grid;
-  grid-template-rows: ${({ visible }) => (visible ? 1 : 0)}fr;
+  grid-template-rows: ${({ $visible }) => ($visible ? 1 : 0)}fr;
   overflow: hidden;
   transition: grid-template-rows 0.3s;
 `

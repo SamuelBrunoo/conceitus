@@ -32,8 +32,8 @@ export const SelectedInfo = styled.span`
   font-weight: 600;
 `
 
-export const OptionsArea = styled.div<{ visible: boolean }>`
-  display: ${({ visible }) => (visible ? "block" : "none")};
+export const OptionsArea = styled.div<{ $visible: boolean }>`
+  display: ${({ $visible }) => ($visible ? "block" : "none")};
   position: absolute;
   top: calc(100% + 4px);
   left: 0;

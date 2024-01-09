@@ -4,6 +4,7 @@ import * as S from "./styles"
 import SettingsHeader from "../../../components/SettingsHeader"
 import RegDataScreen from "./regData"
 import ConfigScreen from "./config"
+import EntriesScreen from "./entries"
 
 const CompSettingsPage = () => {
   const [screen, setScreen] = useState<"data" | "config" | "entries">("data")
@@ -14,6 +15,8 @@ const CompSettingsPage = () => {
         return <RegDataScreen />
       case "config":
         return <ConfigScreen />
+      case "entries":
+        return <EntriesScreen />
     }
   }
 

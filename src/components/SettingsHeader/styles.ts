@@ -95,7 +95,7 @@ export const TabsArea = styled.div`
   gap: 16px;
 `
 
-export const ScreenTab = styled.div<{ active: boolean }>`
+export const ScreenTab = styled.div<{ $active: boolean }>`
   display: grid;
   place-items: center;
   padding: 8px 12px;
@@ -106,6 +106,6 @@ export const ScreenTab = styled.div<{ active: boolean }>`
     font-size: 1rem;
     font-weight: 600;
 
-    text-decoration: ${({ active }) => (active ? "underline" : "")};
+    text-decoration: ${({ $active }) => ($active ? "underline" : "")};
   }
 `

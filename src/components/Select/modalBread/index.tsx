@@ -52,7 +52,7 @@ const SelectModalBread = ({ options, value, onChange }: Props) => {
         </S.Left>
         <Icons.Dropdown width={24} />
       </S.DataArea>
-      <S.OptionsArea visible={showing}>
+      <S.OptionsArea $visible={showing}>
         {falseOptions.map((o, k) => (
           <S.Option key={k} onClick={() => handlePick(o)}>
             <span>{o.value}</span>
