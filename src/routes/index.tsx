@@ -9,6 +9,10 @@ import Entries from "../pages/Entries"
 import Members from "../pages/Members"
 import Settings from "../pages/Settings"
 import CompSettingsPage from "../pages/Settings/company"
+import UserSettingsPage from "../pages/Settings/user"
+import RegDataScreen from "../pages/Settings/subpages/regData"
+import ConfigScreen from "../pages/Settings/subpages/config"
+import EntriesScreen from "../pages/Settings/subpages/entries"
 
 const Router = () => {
   return (
@@ -26,7 +30,11 @@ const Router = () => {
 
           <Route path="settings" element={<Settings />}>
             <Route path="company" element={<CompSettingsPage />} />
-            <Route path="user" element={<CompSettingsPage />} />
+            <Route path="user" element={<UserSettingsPage />}>
+              <Route path="data" element={<RegDataScreen />} />
+              <Route path="config" element={<ConfigScreen />} />
+              <Route path="entries" element={<EntriesScreen />} />
+            </Route>
           </Route>
         </Route>
 

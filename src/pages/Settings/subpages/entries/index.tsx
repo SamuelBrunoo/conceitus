@@ -14,7 +14,7 @@ const fEntriesQt = 4
 
 const EntriesScreen = () => {
   const [searchFilter, setSearchFilter] = useState("")
-  const [date, setDate] = useState(new Date())
+  const [date] = useState(new Date())
 
   return (
     <S.Content>

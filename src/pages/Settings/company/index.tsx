@@ -1,10 +1,10 @@
 import React, { useState } from "react"
-import * as S from "./styles"
+import * as S from "../styles"
 
 import SettingsHeader from "../../../components/SettingsHeader"
-import RegDataScreen from "./regData"
-import ConfigScreen from "./config"
-import EntriesScreen from "./entries"
+import RegDataScreen from "../subpages/regData"
+import ConfigScreen from "../subpages/config"
+import EntriesScreen from "../subpages/entries"
 
 const CompSettingsPage = () => {
   const [screen, setScreen] = useState<"data" | "config" | "entries">("data")
@@ -26,7 +26,7 @@ const CompSettingsPage = () => {
         screen={screen}
         changeScreen={setScreen}
         title="Nome Sobrenome"
-        subtitle="nome.sobrenome@gmail.om"
+        subtitle="nome.sobrenome@gmail.com"
         button={[
           {
             title: "Salvar",

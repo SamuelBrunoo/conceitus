@@ -53,19 +53,28 @@ const MenuDropdown = () => {
           </S.DHeader>
           <S.DBody>
             <S.DList>
-              <S.DListItem onClick={() => nav("/dashboard")}>
+              <S.DListItem
+                className={"bbLink"}
+                onClick={() => nav("/settings/user/data")}
+              >
                 <S.DItemLeft>
                   <Icons.ManageAccountsIcon width={24} />
                   <S.DItemData>Dados pessoais</S.DItemData>
                 </S.DItemLeft>
               </S.DListItem>
-              <S.DListItem onClick={() => nav("/dashboard")}>
+              <S.DListItem
+                className={"bbLink"}
+                onClick={() => nav("/settings/user/config")}
+              >
                 <S.DItemLeft>
                   <Icons.Settings width={24} />
                   <S.DItemData>Gerenciar minha conta</S.DItemData>
                 </S.DItemLeft>
               </S.DListItem>
-              <S.DListItem onClick={() => nav("/dashboard")}>
+              <S.DListItem
+                className={"bbLink"}
+                onClick={() => nav("/dashboard")}
+              >
                 <S.DItemLeft>
                   <Icons.LogoutIcon width={24} />
                   <S.DItemData>Sair</S.DItemData>

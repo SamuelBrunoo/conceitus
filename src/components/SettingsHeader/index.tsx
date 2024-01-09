@@ -18,6 +18,7 @@ type Props = {
     title: string
     action: (value?: any) => void
   }[]
+  personalView?: boolean
 }
 
 const SettingsHeader = ({
@@ -27,10 +28,12 @@ const SettingsHeader = ({
   title,
   subtitle,
   button,
+  personalView,
 }: Props) => {
   const navigate = useNavigate()
 
   const handleTab = (screen: TScreens) => {
+    if (personalView) navigate(`/settings/user/${screen}`)
     changeScreen(screen)
   }
 
@@ -63,26 +66,31 @@ const SettingsHeader = ({
           )}
         </S.HeaderTop>
         <S.TabsArea>
-          <S.BackBtn onClick={getBack}>
-            <Icons.ArrowStrip width={24} height={24} />
-          </S.BackBtn>
+          {!personalView && (
+            <S.BackBtn onClick={getBack}>
+              <Icons.ArrowStrip width={24} height={24} />
+            </S.BackBtn>
+          )}
           <S.ScreenTab
             $active={screen === "data"}
             onClick={() => handleTab("data")}
           >
+            {personalView && <Icons.AccountCircle width={24} height={24} />}
             <span>Dados cadastrais</span>
           </S.ScreenTab>
           <S.ScreenTab
             $active={screen === "config"}
             onClick={() => handleTab("config")}
           >
+            {personalView && <Icons.SettingsFilled width={24} height={24} />}
             <span>Configuração</span>
           </S.ScreenTab>
           <S.ScreenTab
             $active={screen === "entries"}
             onClick={() => handleTab("entries")}
           >
-            <span>Entradas</span>
+            {personalView && <Icons.BookFilled width={24} height={24} />}
+            <span>{personalView ? "Histórico de atividades" : "Entradas"}</span>
           </S.ScreenTab>
         </S.TabsArea>
       </S.HeaderContent>

@@ -96,16 +96,26 @@ export const TabsArea = styled.div`
 `
 
 export const ScreenTab = styled.div<{ $active: boolean }>`
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 8px 12px;
   color: ${({ theme }) => theme.colors.white.primary};
   cursor: pointer;
+  position: relative;
 
   span {
     font-size: 1rem;
     font-weight: 600;
+  }
 
-    text-decoration: ${({ $active }) => ($active ? "underline" : "")};
+  &::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: calc(100% - 20px);
+    border-bottom: 1px solid
+      ${({ $active, theme }) =>
+        $active ? theme.colors.white.primary : "transparent"};
   }
 `

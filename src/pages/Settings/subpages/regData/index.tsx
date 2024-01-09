@@ -7,7 +7,7 @@ import { SettRegOptions as options } from "../../../../utils/_sys/forms/settings
 import Select from "../../../../components/Select"
 import Input from "../../../../components/Input"
 
-const CompSettingsPage = () => {
+const RegDataScreen = () => {
   // values
   const [sex, setSex] = useState<TSettRegData["sex"]>({
     key: "ma",
@@ -181,4 +181,4 @@ const CompSettingsPage = () => {
   )
 }
 
-export default CompSettingsPage
+export default RegDataScreen
